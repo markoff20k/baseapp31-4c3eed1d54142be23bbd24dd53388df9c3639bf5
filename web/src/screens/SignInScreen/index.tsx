@@ -24,10 +24,6 @@ import {
 } from '../../modules';
 
 
-
-import { SignIn } from './Login/index';
-
-
 export const SignInScreen: React.FC = () => {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -184,7 +180,6 @@ export const SignInScreen: React.FC = () => {
                         handleClose2fa={handleClose}
                     />
                 ) : (
-                    // <SignIn />
                     <SignInComponent
                         email={email}
                         emailError={emailError}

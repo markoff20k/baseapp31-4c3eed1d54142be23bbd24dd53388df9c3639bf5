@@ -1,23 +1,6 @@
 import styled from "styled-components";
 import background from "../../assets/images/background-signin.png";
 
-export const Container = styled.div`
-  max-width: 100vw;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-
-`;
-
-export const Content = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
 
 export const Login = styled.div`
   width: 480px;

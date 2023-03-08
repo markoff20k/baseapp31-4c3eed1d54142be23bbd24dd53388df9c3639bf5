@@ -15,7 +15,6 @@ import { selectMobileDeviceState } from '../../modules/public/globalSettings';
 import { FormInput } from '..';
 
 
-import { Container, Content, Login, Header, Input, Buttons } from "./style";
 import { Checkbox } from "@mui/material";
 
  
@@ -184,37 +183,21 @@ const SignIn: React.FC<SignInProps> = ({
 
     return (
 
+        <div className='cr-sign-in-form'>
+            
 
-        <Container>
-        <Content>
-             <Login>
-               <Header>
+            <div className='cr-sign-in-form__login'>
+             
+            <div className='cr-sign-in-form__header'>
+            
                  <img src={logo} alt="Logo" />
                  <p>
                    Faça o login com o email utilizado
                    <br />
                    no cadastro
                  </p>
-               </Header>
-               <Input>
-                 {/* <TextField
-                   className="input-login"
-                   // size="small"
-                   id="outlined-basic"
-                   label="Email"
-                   variant="outlined"
-                 />
-                 <TextField
-                   className="input-login"
-                   // size="small"
-                   id="outlined-basic"
-                   label="Senha"
-                   variant="outlined"
-                 /> */}
-                 
-                 <div className="cr-sign-in-form__header">
-                        
-                 </div>
+            </div>
+            <div className='cr-sign-in-form__input'>
 						<FormInput
 							
 							classNameInput="input-login"
@@ -251,8 +234,8 @@ const SignIn: React.FC<SignInProps> = ({
                    <Checkbox className="checkbox-btn" />
                    <p>Lembrar meus dados de login</p>
                  </div> */}
-               </Input>
-               <Buttons>
+               </div>
+               <div className='cr-sign-in-form__buttons'>
                  <div className="access-account">
                         <Button
                             block={true}
@@ -281,94 +264,13 @@ const SignIn: React.FC<SignInProps> = ({
                      Criar conta
                    </button>
                  </div>
-               </Buttons>
-             </Login>
-           </Content>
-       </Container>
+               </div>
+             
+             </div>
 
 
 
-
-        {/*
-
-        <form>
-            <div className="cr-sign-in-form" onKeyPress={handleEnterPress}>
-                {!isMobileDevice && (
-                    <div className="cr-sign-in-form__options-group">
-                        <div className="cr-sign-in-form__option">
-                            <div className="cr-sign-in-form__option-inner __selected">
-                                {labelSignIn ? labelSignIn : 'Sign In'}
-                            </div>
-                        </div>
-                        <div className="cr-sign-in-form__option">
-                            <div
-                                className="cr-sign-in-form__option-inner cr-sign-in-form__tab-signup"
-                                onClick={onSignUp}>
-                                {labelSignUp ? labelSignUp : 'Sign Up'}
-                            </div>
-                        </div>
-                    </div>
-                )}
-                <div className="cr-sign-in-form__form-content">
-                    {image ? (
-                        <h1 className="cr-sign-in-form__title">
-                            <img className="cr-sign-in-form__image" src={image} alt="logo" />
-                        </h1>
-                    ) : null}
-                    <div
-                        className={cr('cr-sign-in-form__group', {
-                            'cr-sign-in-form__group--focused': emailFocused,
-                        })}>
-                        <CustomInput
-                            type="email"
-                            label={emailLabel || 'Email'}
-                            placeholder={emailPlaceholder}
-                            defaultLabel="Email"
-                            handleChangeInput={handleChangeEmail}
-                            inputValue={email}
-                            handleFocusInput={() => handleFieldFocus('email')}
-                            classNameLabel="cr-sign-in-form__label"
-                            autoFocus={!isMobileDevice}
-                        />
-                        {emailError && <div className={'cr-sign-in-form__error'}>{emailError}</div>}
-                    </div>
-                    <div
-                        className={cr('cr-sign-in-form__group', {
-                            'cr-sign-in-form__group--focused': passwordFocused,
-                        })}>
-                        <CustomInput
-                            type="password"
-                            label={passwordLabel || 'Password'}
-                            placeholder={passwordPlaceholder}
-                            defaultLabel="Password"
-                            handleChangeInput={handleChangePassword}
-                            inputValue={password}
-                            handleFocusInput={() => handleFieldFocus('password')}
-                            classNameLabel="cr-sign-in-form__label"
-                            autoFocus={false}
-                        />
-                        {passwordError && <div className={'cr-sign-in-form__error'}>{passwordError}</div>}
-                    </div>
-                    {captchaLogin() && renderCaptcha}
-                    {isMobileDevice && renderForgotButton}
-                    <div className="cr-sign-in-form__button-wrapper">
-                        <Button
-                            block={true}
-                            type="button"
-                            disabled={isLoading || !email.match(EMAIL_REGEX) || !password || isButtonDisabled}
-                            onClick={handleClick as any}
-                            size="lg"
-                            variant="primary">
-                            {isLoading ? 'Loading...' : labelSignIn ? labelSignIn : 'Sign in'}
-                        </Button>
-                    </div>
-                    {!isMobileDevice && renderForgotButton}
-                    {isMobileDevice && renderRegister}
-                </div>
-            </div>
-        </form>
-    
-                    */}
+    </div>
     );
 };
 
