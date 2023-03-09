@@ -29,7 +29,7 @@ import {
     User,
 } from '../../modules';
 import enIcon from 'src/assets/images/sidebar/en.svg';
-import ruIcon from 'src/assets/images/sidebar/ru.svg';
+import ptIcon from 'src/assets/images/sidebar/pt.svg';
 
 interface State {
     isOpenLanguage: boolean;
@@ -191,8 +191,8 @@ class SidebarContainer extends React.Component<Props, State> {
     };
 
     private getLanguageIcon = (name: string): string => {
-        if (name === 'ru') {
-            return ruIcon;
+        if (name === 'pt') {
+            return ptIcon;
         } else {
             return enIcon;
         }
